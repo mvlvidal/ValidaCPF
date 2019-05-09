@@ -4,53 +4,58 @@ namespace ValidaCPF
 {
     class Program
     {
-        
+
 
         static void Main(string[] args)
         {
-            ValidadorCPF vcpf = new ValidadorCPF();
-
-            Console.WriteLine("Digite seu CPF!");
-
-            string cpf = Console.ReadLine();
-
-            bool resultado = vcpf.Validacao(cpf);
-
-            if (resultado == true) {
-                Console.WriteLine("CPF Válido");
-            }
-            else
-            {
-                Console.WriteLine("CPF Inválido");
-            }
+            ValidadorCpf vcpf = new ValidadorCpf();
+            Console.Write("CPF: ");
+            string leCpf = Console.ReadLine();
+            vcpf.Validacao(leCpf);
 
         }
 
-        
+
     }
 
-    class ValidadorCPF
+    class ValidadorCpf
     {
-        private char[] num1;
-        private int[] num2;
 
-        public bool Validacao(string cpf)
+        private int[] cpf;
+        private int dig1;
+        private int dig2;
+
+        public void Validacao(string testeCpf)
         {
-            num1 = new char[10];
-            num2 = new int[10];
 
-           num2 = ConverteVetor(cpf);
+            char[] serieChar = new char[11];
+            string cpfTeste;
+            int cont;
+            cpf = new int[11];
+            int dig;
 
-            int dig = 0;
-            int dig1 = 10;
-            int dig2 = 11;
+            //Converte String em Array de Char
+            serieChar = testeCpf.ToCharArray();
 
-
-            //Primeiro Digito
-            for (int i = 0; i < 10; i++)
+            //Converte Array de Char em Array de int
+            for (int i = 0; i < 11; i++)
             {
-                dig += num2[i] * dig1;
-                dig--;
+                //Converte Char em código Asc Decimal e depois em int      
+                cpf[i] = (int)Char.GetNumericValue(serieChar[i]);
+                //Console.WriteLine(cpf[i]);
+
+            }
+
+            //Validando Primeiro Digito Verificador
+            dig = 0;
+            cont = 10;
+            dig1 = 10;
+            for (int i = 0; i < 9; i++)
+            {
+
+                dig += cpf[i] * cont;
+
+                cont--;
             }
 
             if (dig % 11 == 0 || dig % 11 == 1)
@@ -62,15 +67,16 @@ namespace ValidaCPF
                 dig1 = 11 - (dig % 11);
             }
 
-            num2[9] = dig1;
+            cpf[9] = dig1;
+
+            //Validando Segundo Digito Verificador
             dig = 0;
-
-            //Segundo Digito
-
-            for (int j = 0; j < 11; j++)
+            cont = 11;
+            dig2 = 11;
+            for (int i = 0; i < 10; i++)
             {
-                dig += num2[j] * dig2;
-                dig--;
+                dig += cpf[i] * cont;
+                cont--;
             }
 
             if (dig % 11 == 0 || dig % 11 == 1)
@@ -82,33 +88,20 @@ namespace ValidaCPF
                 dig2 = 11 - (dig % 11);
             }
 
-            num2[10] = dig2;
+            cpf[10] = dig2;
 
-            string num3 = num2.ToString();
+            //Comparção para finalizar validação
+            cpfTeste = $"{cpf[0]}{cpf[1]}{cpf[2]}{cpf[3]}{cpf[4]}{cpf[5]}{cpf[6]}{cpf[7]}{cpf[8]}{cpf[9]}{cpf[10]}";
 
-            if (!num3.Equals(cpf))
+            if (cpfTeste == testeCpf)
             {
-                return false;
+                Console.WriteLine("Cpf válido!");
+            }
+            else
+            {
+                Console.WriteLine("Cpf inválido!");
             }
 
-            return true;
         }
-
-        public int[] ConverteVetor(string cpfNum)
-        {
-
-            int[] num = new int[10];
-            char[] numeros = new char[10];
-
-            numeros = cpfNum.ToCharArray();
-
-            for(int i = 0; i <= num.Length; i++)
-            {
-                num[i] = (int)Char.GetNumericValue(numeros[i]);
-            }
-
-            return num;
-        }
-
     }
 }
