@@ -1,0 +1,11 @@
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.csprojAssemblyReference.cache
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.csproj.CoreCompileInputs.cache
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.AssemblyInfoInputs.cache
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.AssemblyInfo.cs
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\bin\Debug\netcoreapp2.1\ValidaCPF.deps.json
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\bin\Debug\netcoreapp2.1\ValidaCPF.runtimeconfig.json
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\bin\Debug\netcoreapp2.1\ValidaCPF.runtimeconfig.dev.json
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\bin\Debug\netcoreapp2.1\ValidaCPF.dll
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\bin\Debug\netcoreapp2.1\ValidaCPF.pdb
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.dll
+C:\DEV\Visual Studio Projects\ValidaCPF\ValidaCPF\obj\Debug\netcoreapp2.1\ValidaCPF.pdb
